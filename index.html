@@ -4,8 +4,27 @@
     <!--PAGE INFO-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
     <title>JTA Confecções</title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <!--STYLE-->
     <link rel="stylesheet" href="style.css" />
@@ -20,22 +39,32 @@
 
     <!-- ICONS -->
     <link rel="stylesheet" href="icon\style.css" />
-    />
+    
   </head>
   <body>
-    <!--header-->
+
+    <!--HEADER-->
     <header id="header">
       <nav>
-        <div class="logo">
-          <a href="#"
-            ><img class="logo" src="assets\logo.png" alt="logo da página"
-          /></a>
+
+        <!-- DARK MODE -->
+        <div class="toggle">
+          <input type="checkbox" class="toggle" id="switch" name="theme">
+          <label for="switch"></label>
         </div>
+
+        <div class="logo">
+          <a href="#">
+            <button class="logo"></button>
+          </a>
+        </div>
+
       </nav>
     </header>
 
     <main>
-      <!--home-->
+
+      <!-- HOME -->
       <section class="section">
         <div class="container grid" id="home">
           <div class="image">
@@ -67,7 +96,7 @@
 
       <div class="divider-2"></div>
 
-      <!--products-->
+      <!-- PRODUCTS -->
       <section class="section">
         <div class="container grid" id="products">
           <div class="text">
@@ -99,7 +128,7 @@
 
       <div class="divider"></div>
 
-      <!--contact-->
+      <!-- CONTACT -->
       <section class="section">
         <div class="container grid" id="contact">
           <div class="text">
@@ -127,27 +156,21 @@
                 Whatsapp - Leonardo</a
               >
             </ul>
-            <ul>
-              <a
-                href="https://api.whatsapp.com/send?phone=+5543996893911&text=Olá, Gostaria de fazer um pedido!"
-                class="button"
-                target="_blank"
-                ><div class="icon-whatsapp"></div>
-                Whatsapp - Eduarda</a
-              >
-            </ul>
           </div>
         </div>
       </section>
 
       <div class="divider-2"></div>
+
     </main>
 
-    <!--footer-->
+    <!-- FOOTER -->
     <footer id="footer">
       <div class="container grid">
         <div class="image">
-          <a href="#"><img src="assets\logo.png" alt="logo da página" /> </a>
+          <a href="#">
+            <button></button>
+          </a>
         </div>
         <div class="text">
           <p>@2021 JTA Confecções</p>
@@ -156,10 +179,10 @@
       </div>
     </footer>
 
-    <!--srcollreveal-->
+    <!-- SCROLLREVEAL -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!--mainjs-->
+    <!-- MAIN JS -->
     <script src="main.js"></script>
   </body>
 </html>

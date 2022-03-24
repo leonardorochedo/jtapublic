@@ -4,6 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  width: 100vw;
+  background-color: var(--background-color);
+}
+
 /* tirando as bolinhas de lista */
 ul {
   list-style: none;
@@ -15,18 +21,6 @@ a {
 /* deixando a rolagem mais suave */
 html {
   scroll-behavior: smooth;
-}
-
-/* variables */
-:root {
-  --base-color: rgba(255, 136, 0, 0.849);
-  --base-color-alt: rgba(161, 0, 0, 0.89);
-
-  --background-color: white;
-  --tittle-color: rgba(0, 0, 0, 0.959);
-  --body-color: rgba(83, 83, 83, 0.87);
-  --font-tittle: 'Poppins', sans-serif;
-  --body-font: 'DM Sans', sans-serif;
 }
 
 /* base */
@@ -51,7 +45,7 @@ h1 {
 
 h2 {
   font: 600 1.5rem var(--body-font);
-  color: rgb(0, 0, 0);
+  color: var(--tittle-coloralt);
 }
 
 /*definindo o tamanho e expressura da tag image*/
@@ -60,27 +54,104 @@ img {
   height: auto;
 }
 
+/* icons */
 i {
   display: inline-flex;
   font-size: 1.75rem;
 }
 
+/* variables */
+:root {
+  --base-color: rgba(255, 136, 0, 0.849);
+  --base-coloralt: rgba(161, 0, 0, 0.89);
+
+  --header-color: #fdfafa;
+  --footer-color: rgba(161, 0, 0, 0.89);
+  --background-color: white;
+
+  --logo: url("assets/logo.png");
+  --thema-icon: url("assets/sun.svg");
+  --button-color: rgb(70, 224, 70);
+  --button-hover: rgb(34, 150, 34);
+  --cards-color: white;
+
+  --tittle-color: rgba(0, 0, 0, 0.959);
+  --tittle-coloralt: #000000; /* sem o - */
+  --body-color: rgba(83, 83, 83, 0.87);
+  --font-tittle: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+}
+
 /* navegation */
 nav {
   display: flex;
-  height: 6.65rem;
+  height: 6.5em;
   align-items: center;
+  justify-content: center;
+}
+
+/* Dark Mode */
+div.toggle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  
+  margin-left: 17em;
+}
+
+div.toggle .toggle {
+  display: none;
+}
+
+div.toggle .toggle + label {
+  width: 45px;
+  height: 24px;
+  background: rgba(190, 190, 181, 0.726);
+  display: block;
+  position: relative;
+  border-radius: 20px;
+  padding: 2px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+div.toggle .toggle + label:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--thema-icon) no-repeat; /* svg moon */
+  background-size: 1.2em;
+  display: block;
+  border-radius: 50%;
+  right: unset;
+  left: 2px;
+  top: 2px;
+  transition: 200ms;
+}
+
+div.toggle .toggle:checked + label {
+  background: blue;
+}
+
+div.toggle .toggle:checked + label:before {
+  content: '';
+  left: calc(100% - 22px);
+  /* box-shadow: 0 2px 2px rgb(0 0 0 / 100); */
+}
+
+nav a button.logo {
+  height: 6.5rem;
+  width: 7.5em;
+
+  border: none;
+  margin-top: 1.25em;
+
+  background: var(--logo) no-repeat;
+  background-size: 7.2em;
 }
 
 /* classes */
-.logo {
-  width: 47%;
-  display: flex;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .container {
   width: 100%;
   margin-left: 1.5rem;
@@ -98,7 +169,7 @@ nav {
 }
 
 .button {
-  background-color: rgb(70, 224, 70);
+  background-color: var(--button-color);
   transition: background 0.3s;
 
   font: 700 1rem var(--body-font);
@@ -115,18 +186,18 @@ nav {
 }
 
 .button:hover {
-  background: rgb(34, 150, 34);
+  background: var(--button-hover);
   transition: background 0.3s;
 }
 
 .divider {
   height: 1px;
-  background: linear-gradient(210deg, var(--base-color), var(--base-color-alt));
+  background: linear-gradient(210deg, var(--base-color), var(--base-coloralt));
 }
 
 .divider-2 {
   height: 1px;
-  background: linear-gradient(210deg, var(--base-color-alt), var(--base-color));
+  background: linear-gradient(210deg, var(--base-coloralt), var(--base-color));
 }
 
 /* ICONS */
@@ -164,7 +235,7 @@ nav {
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: var(--background-color);
+  background-color: var(--header-color);
 }
 
 /* alinhando a logo ao centro do header */
@@ -231,6 +302,8 @@ nav {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 /* PRODUCTS */
@@ -263,7 +336,7 @@ nav {
 #products .images h2 {
   margin-top: 1.5rem;
   font: 700 1.5rem var(--font-tittle);
-  color: rgb(0, 0, 0);
+  color: var(--tittle-coloralt);
   text-align: center;
 }
 
@@ -279,83 +352,97 @@ nav {
 .card {
   padding: 3.65rem;
   margin-top: 3rem;
-  box-shadow: 0px 0px 12px rgb(0, 0, 0);
+  box-shadow: 0px 0px 12px black;
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25px 0.25px 0 0;
   border-radius: 4px;
+
+  background: var(--cards-color);
 }
 
 /* CONTACT */
 #contact.grid {
   margin: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 #contact .text {
-  margin-left: 0.5rem; /*arrumando as bordas*/
-  margin-right: 1.5rem;
-  text-align: center;
-}
-
-#contact .text h1 {
   text-align: center;
   margin-bottom: 2rem;
 }
 
+#contact .text h1 {
+  text-align: center;
+}
+
 #contact .whats ul a {
   margin: 0rem 1rem 2rem 2rem;
-  width: 83.5%;
+  width: 18em;
 }
 
 /* FOOTER */
 #footer {
-  background: var(--base-color-alt);
+  background: var(--footer-color);
+  height: 6.7em;
 }
 
 #footer .container {
   display: inline-flex;
   align-items: center;
+  margin: 0;
+  justify-content: space-between;
 }
 
-#footer img {
-  margin-top: 2rem;
-  margin-left: 0rem;
-  margin-bottom: 2rem;
-  height: auto;
-  width: 20%;
+#footer button {
+  background: var(--logo) no-repeat;
+  background-size: 6em;
+
+  border: none;
+  margin: 1em 1.7em;
+
+  width: 6rem;
+  height: 5.9em;
 }
 
 #footer .text {
-  margin-left: -10rem;
-  margin-right: 5rem;
-  margin-top: -1rem;
-  font-size: 0.8rem;
-  color: rgb(255, 255, 255);
-}
-
-#footer .text p {
-  margin-top: 0.25rem;
-}
-
-#footer .image a {
-  transition: 0.3s; /* habilitando a transicao */
-  display: inline-block; /* display block nao mexe */
-}
-
-#footer .image a:hover {
-  transform: translateY(-15px); /* transform y cima baixo -15px */
+  font-size: 0.75em;
+  color: white;
+  margin-right: 2em;
 }
 
 /* MEDIA QUERIES */
+
 /*extra large: 1200 > */
 @media (min-width: 1200px) {
   /*header*/
-  #header .logo {
-    width: 29%;
+  nav {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 6.5em;
+  }
+
+  nav .toggle {
+    margin-left: 50em;
+  }
+
+  nav a button.logo {
+    height: 6.5rem;
+    width: 7em;
+
+    border: none;
+    margin-top: 1.25em;
+  
+    background: var(--logo) no-repeat;
+    background-size: 100%;
+  }
+
+  nav a button {
+    cursor: pointer;
   }
 
   /* home */
-  #home {
-  }
 
   #home img {
     text-align: right;
@@ -376,7 +463,7 @@ nav {
   }
 
   #home h1 i {
-    margin-left: 8rem;
+    margin-left: 9rem;
   }
 
   #home p {
@@ -387,6 +474,9 @@ nav {
   #home .button {
     margin-left: 5.5rem;
     width: 20%;
+
+    justify-content: center;
+    align-items: center;
   }
 
   /* PRODUCTS */
@@ -403,43 +493,48 @@ nav {
   /* CONTACT */
   #contact {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
   }
 
   #contact .whats {
     width: 37%;
-    margin-left: 10rem;
   }
 
   #contact .whats ul {
-    margin-left: 22%;
+    margin-left: 12em;
   }
 
-  #contact .text {
-    margin-top: 6.5rem;
-    margin-left: 15rem;
+  #contact .whats ul a {
+    width: 23em;
   }
 
   /* footer */
   #footer {
     display: flex;
-  }
 
-  #footer img {
-    margin-top: 2.5rem;
-    margin-left: 3rem;
-    width: 10%;
+    height: 10em;
   }
 
   #footer .text {
-    margin-top: 0.2rem;
-    margin-right: 3rem;
-
-    font-size: 0.8rem;
-    text-align: right;
+    font-size: 1rem;
+    margin-right: 4em;
   }
 
   #footer .text p {
-    margin-top: 1rem;
+    margin-top: 0.3rem;
+  }
+
+  #footer button {
+    background: var(--logo) no-repeat;
+    background-size: 8em;
+    cursor: pointer;
+  
+
+    margin: 2em 4em;
+  
+    width: 7rem;
+    height: 8em;
   }
 }
