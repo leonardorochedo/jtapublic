@@ -7,13 +7,13 @@ modelo do site inspirado no projoto *beautysalon 💇* já que os dois tinham o 
 <div align="center">
   <p>Como o site é "landing" só vou colocar a home</p>
   
-  <h2>Desktop</h2> 
+  <h2>Desktop (dark mode off)</h2> 
   
-![Desktop](https://user-images.githubusercontent.com/62243365/155731959-24e7ccae-3ae1-45d4-9f32-2ae8533d5359.png)
+![desktop](https://user-images.githubusercontent.com/62243365/159816404-188ccdaa-1a93-4dda-bb93-ff2cb729897a.png)
  </div>
 
 <div align="center">
-  <h2>Mobile</h2> 
+  <h2>Mobile (dark mode on)</h2> 
   
-![Mobile](https://user-images.githubusercontent.com/62243365/155731954-1a3180e9-3a87-483b-988b-c9cec3ff1e09.png)
+![mobile](https://user-images.githubusercontent.com/62243365/159816407-62c8cc15-95f0-454e-917c-54665c7cd618.png)
  </div>
