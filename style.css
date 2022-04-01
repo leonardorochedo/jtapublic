@@ -137,7 +137,6 @@ div.toggle .toggle:checked + label {
 div.toggle .toggle:checked + label:before {
   content: '';
   left: calc(100% - 22px);
-  /* box-shadow: 0 2px 2px rgb(0 0 0 / 100); */
 }
 
 nav a button.logo {
@@ -536,5 +535,52 @@ nav a button.logo {
   
     width: 7rem;
     height: 8em;
+  }
+}
+
+@media (min-width: 1700px) {
+  nav {
+    height: 9.5em;
+  }
+
+  nav a button.logo {
+    width: 9em;
+    height: 9em;
+    margin-top: 0;
+  }
+
+  div.toggle .toggle + label {
+    width: 60px;
+    height: 30px;
+  }
+
+  div.toggle .toggle + label:before {
+    background-size: 1.5em;
+    width: 22px;
+    height: 26px;
+  }
+
+  #home .image::before {
+    top: 0;
+  }
+
+  #home .image img {
+    right: 0;
+    left: 54%;
+    top: 10%;
+  }
+
+  #home .text h1 {
+    margin-left: 3.8em;
+  }
+
+  #home .text p, #home .text a {
+    margin-left: 3.5em;
+  }
+
+  #home .button {
+    margin-top: 3.5em;
+    margin-left: 11.3em;
+    width: 13%;
   }
 }
